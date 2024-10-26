@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: inline-block;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+        .footer {
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .button-container button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+        .button-container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="{% url '' %}">Home</a>
+        <a href="{% url 'user_logout' %}">Logout</a>
+        <a href="{% url 'hf' %}">Heartfailure</a>
+        <a href="{% url 'cad' %}">CAD</a>
+    </div>
+
+    <div class="container">
+        <h1>Welcome to Your Dashboard</h1>
+        <div class="button-container">
+            
+                <button id="hf-button">HEART FAILURE</button>
+                <button id="CAD-button">CAD</button>
+
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('hf-button').onclick = function() {
+            location.href = "{% url 'hf' %}";
+        };
+        document.getElementById('CAD-button').onclick = function() {
+            location.href = "{% url 'cad' %}";
+        };
+    </script>
+
+    <div class="footer">
+        &copy; 2024 Your Dashboard
+    </div>
+</body>
+</html>

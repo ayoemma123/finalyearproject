@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Heart Disease Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: inline-block;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #007bff;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        p, ul {
+            margin: 10px 0;
+        }
+        .footer {
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="{% url '' %}">Home</a>
+        <a href="{% url 'login' %}">Login</a>
+        <a href="{% url 'reg' %}">Register</a>
+    </div>
+
+    <div class="container" id="home">
+        <h1>Welcome to AI Heart Disease Prediction System</h1>
+        <p>This tool helps predict the likelihood of Coronary Artery Disease (CAD) and Heart Failure based on various health metrics. Use the login page to access personalized predictions.</p>
+    </div>
+
+    <div class="container" id="about">
+        <h1>About Heart Disease</h1>
+        
+        <h2>Evaluation of Symptoms</h2>
+        <p>Patients presenting with certain symptoms may prompt further testing for heart disease. Common symptoms include:</p>
+        <ul>
+            <li><strong>Chest Pain or Discomfort:</strong> Especially if it radiates to the arm, neck, jaw, or back.</li>
+            <li><strong>Shortness of Breath:</strong> Particularly with exertion or while lying down.</li>
+            <li><strong>Palpitations:</strong> Irregular or rapid heartbeats.</li>
+            <li><strong>Fatigue:</strong> Unusual or severe tiredness.</li>
+            <li><strong>Swelling:</strong> Edema in legs, ankles, or feet.</li>
+        </ul>
+
+        <h2>Assessment of Risk Factors</h2>
+        <p>Healthcare providers assess risk factors that increase the likelihood of heart disease. These include:</p>
+        <ul>
+            <li><strong>Age:</strong> Older age increases risk.</li>
+            <li><strong>Gender:</strong> Males are generally at higher risk, though risk increases for women post-menopause.</li>
+            <li><strong>Family History:</strong> A family history of heart disease, particularly in close relatives.</li>
+            <li><strong>Medical Conditions:</strong> Hypertension, diabetes, high cholesterol, and obesity.</li>
+            <li><strong>Lifestyle Factors:</strong> Smoking, physical inactivity, unhealthy diet, and excessive alcohol consumption.</li>
+            <li><strong>Stress:</strong> Chronic stress and mental health conditions.</li>
+        </ul>
+
+        <h2>Physical Examination</h2>
+        <p>A thorough physical examination can reveal signs of heart disease, such as:</p>
+        <ul>
+            <li><strong>Heart Murmurs:</strong> Indicating potential valvular heart disease.</li>
+            <li><strong>Abnormal Heart Sounds:</strong> Such as gallops or rubs.</li>
+            <li><strong>Signs of Heart Failure:</strong> Swelling in legs, jugular venous distension, and lung crackles.</li>
+        </ul>
+
+        <h2>Diagnostic Tests</h2>
+        <p>Based on the evaluation of symptoms and risk factors, various diagnostic tests may be ordered:</p>
+        
+        <h3>Non-Invasive Tests</h3>
+        <ul>
+            <li><strong>Electrocardiogram (ECG or EKG):</strong> Measures the electrical activity of the heart to detect arrhythmias, ischemia, and myocardial infarction.</li>
+            <li><strong>Echocardiogram:</strong> Uses ultrasound to visualize heart structure and function, assessing conditions like heart failure and valvular disease.</li>
+            <li><strong>Stress Test:</strong> Assesses how the heart performs under physical stress, identifying ischemia or other abnormalities.</li>
+            <li><strong>Holter Monitor:</strong> A portable ECG device worn for 24-48 hours to detect intermittent arrhythmias.</li>
+            <li><strong>Cardiac CT or MRI:</strong> Provides detailed images of heart structures, identifying issues such as coronary artery disease or structural abnormalities.</li>
+        </ul>
+        
+        <h3>Invasive Tests</h3>
+        <ul>
+            <li><strong>Cardiac Catheterization and Coronary Angiography:</strong> Involves inserting a catheter into coronary arteries to visualize blockages and measure pressures within the heart chambers.</li>
+            <li><strong>Electrophysiology Study:</strong> Evaluates the electrical activity and pathways of the heart, useful for diagnosing complex arrhythmias.</li>
+        </ul>
+
+        <h2>Blood Tests</h2>
+        <p>Blood tests can provide critical information regarding heart health:</p>
+        <ul>
+            <li><strong>Troponin Levels:</strong> Elevated levels indicate myocardial injury or heart attack.</li>
+            <li><strong>Lipid Profile:</strong> Measures cholesterol levels, helping assess cardiovascular risk.</li>
+            <li><strong>BNP or NT-proBNP:</strong> Elevated levels indicate heart failure.</li>
+            <li><strong>C-reactive Protein (CRP):</strong> Elevated levels suggest inflammation, which is a risk factor for heart disease.</li>
+        </ul>
+
+        <h2>Screening Guidelines</h2>
+        <p>Adherence to clinical guidelines helps determine when to screen for heart disease:</p>
+        <ul>
+            <li><strong>Routine Screening:</strong> Recommended for individuals with multiple risk factors or a family history of heart disease.</li>
+            <li><strong>Age-Specific Recommendations:</strong> Guidelines may suggest beginning regular screening at a certain age, especially for those with risk factors.</li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        &copy; 2024 Heart Disease Prediction Tool
+    </div>
+</body>
+</html>

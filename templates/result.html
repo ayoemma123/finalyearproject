@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .navbar {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: inline-block;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .result-box, .details-box, .recommendations-box {
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .result-box {
+            background-color: #e9ecef;
+        }
+
+        .positive {
+            color: #d9534f;
+            font-weight: bold;
+        }
+
+        .negative {
+            color: #5cb85c;
+            font-weight: bold;
+        }
+
+        .details-box p, .recommendations-box ul {
+            text-align: left;
+        }
+
+        .recommendations-box ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .back-link {
+            margin-top: 20px;
+        }
+
+        .back-link a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="container">
+        <h1>Coronary Artery Disease Prediction Result</h1>
+        <div class="result-box">
+            <h2>Prediction Result:</h2>
+            <p>
+                {% if result == 1 %}
+                    <span class="positive">You have a high risk of coronary artery disease.</span>
+                {% else %}
+                    <span class="negative">You have a low risk of coronary artery disease.</span>
+                {% endif %}
+            </p>
+        </div>
+
+        <div class="details-box">
+            <h2>What this means:</h2>
+            {% if result == 1 %}
+                <p>Based on the provided information, the model indicates that you have a high risk of coronary artery disease. It is recommended that you consult with a healthcare professional for further evaluation and appropriate action.</p>
+            {% else %}
+                <p>Based on the provided information, the model indicates that you have a low risk of coronary artery disease. However, it is still important to maintain a healthy lifestyle and regular check-ups with your healthcare provider.</p>
+            {% endif %}
+        </div>
+
+        <div class="recommendations-box">
+            <h2>Recommendations:</h2>
+            {% if result == 1 %}
+                <ul>
+                    <li>Consult with a healthcare professional for a detailed assessment.</li>
+                    <li>Consider lifestyle changes such as a healthy diet, regular exercise, and smoking cessation.</li>
+                    <li>Monitor and manage other health conditions like hypertension, diabetes, and cholesterol levels.</li>
+                    <li>Consider medications as prescribed by your doctor.</li>
+                </ul>
+            {% else %}
+                <ul>
+                    <li>Continue maintaining a healthy lifestyle with a balanced diet and regular physical activity.</li>
+                    <li>Keep regular check-ups with your healthcare provider to monitor your health status.</li>
+                    <li>Be aware of any changes in your health and seek medical advice if necessary.</li>
+                </ul>
+            {% endif %}
+        </div>
+
+        <div class="back-link">
+            <a href="{% url 'cad' %}">Go back to the prediction form</a>
+        </div>
+    </div>
+</body>
+</html>
