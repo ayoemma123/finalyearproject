@@ -1,0 +1,25 @@
+# .github/workflows/pull-request.yml
+
+name: PR Check
+
+on:
+  pull_request:
+    branches: [my_first_branch]
+    types: [opened, synchronize, reopened]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python (example)
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Display a message
+        run: |
+          echo "This is a simple test to display a message on the shell container"
