@@ -4,7 +4,7 @@ name: PR Check
 
 on:
   pull_request:
-    branches: [my_first_branch]
+    branches: [main]
     types: [opened, synchronize, reopened]
 
 jobs:
@@ -19,6 +19,12 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
+
+      - uses: actions/first-interaction@v1
+        with:
+          repo-token: ${{ secrets.GH_TOKEN }}
+          issue-message: "Message that will be displayed on users' first issue"
+          pr-message: "Message that will be displayed on users' first pull request"
 
       - name: Display a message
         run: |
