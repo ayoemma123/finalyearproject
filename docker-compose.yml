@@ -1,0 +1,11 @@
+version: '3.9'
+
+services:
+  web:
+    build: .
+    volumes:
+      - .:/django
+    ports:
+      - "8000:8000"
+    image: application:django
+    command: gunicorn finalproject.wsgi:application --bind 0.0.0.0:8000
